@@ -1,5 +1,7 @@
+import { TbShoppingBag } from "react-icons/tb"; 
 import NikeLogo from "../assets/nike-logo.svg?react"
 import { RxHamburgerMenu } from "react-icons/rx";
+import { useState } from "react";
 
 const ROUTES = [
     "Home",
@@ -10,6 +12,7 @@ const ROUTES = [
 ]
 
 export default function Nav() {
+    const [isMobileMenuShown, setIsMobileMenuShown] = useState(false);
   return (
     <nav className="flex flex-wrap items-center justify-between">
 
@@ -19,21 +22,37 @@ export default function Nav() {
         </a>
 
         {/* Hamburger button: */}
-        <button className=" rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 ">
+        <button onClick={()=> setIsMobileMenuShown(!isMobileMenuShown)} className="lg:hidden rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 ">
             <RxHamburgerMenu size={25}/>
         </button>
 
         {/* Menu list: */}
-        <div className="w-full">
-            <ul className="rounded-lg border border-gray-100 bg-gray-50 p-4 text-lg">
+        <div className={`${ 
+            !isMobileMenuShown && "hidden"
+            } w-full lg:w-auto lg:block`}
+        >
+            <ul className="lg:space-x-8 flex flex-col lg:flex-row rounded-lg border border-gray-100 lg:border-none bg-gray-50 lg:bg-transparent p-4 text-lg">
                 {ROUTES.map((route, i) => {
                     return (
-                        <li className={`px-3 py-2 ${i===0 ? "bg-blue-500" : ""}`} key={route}>
+                        <li className={`cursor-pointer rounded px-3 py-2 ${
+                            i===0 
+                                ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500" 
+                                : "hover:bg-gray-100"
+                            }`} 
+                            key={route}
+                        >
                             {route}
                         </li>
                     )
                 })}
             </ul>
+        </div>
+
+        {/* Cart button */}
+        <div className="fixed left-4 bottom-4 lg:static">
+            <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md">
+                <TbShoppingBag />
+            </div>
         </div>
 
     </nav>

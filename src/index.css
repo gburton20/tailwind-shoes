@@ -1,1 +1,10 @@
+/* making Tailwind available: */
 @import "tailwindcss";
+/* @import "tailwindcss" in modern Tailwind CSS v4+ is actually a simplified import, but you still need @tailwind utilities to explicitly control where those utility classes are injected into your final CSS. */
+@tailwind utilities;
+
+@layer utilities {
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+}
