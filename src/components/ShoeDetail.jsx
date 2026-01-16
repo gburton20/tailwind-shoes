@@ -1,14 +1,14 @@
 import nike1 from "../assets/n1-min.png"
-import { QTY } from "./constant";
-import { SIZES } from "./constant";
+import { QTY, SIZES } from "./constant";
 import { Select } from "./Select";
 
 export default function ShoeDetail() {
     return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
+        {/* Shoe image */}
         <div className="flex-1 lg:-mt-32 lg:ml-28">
             <div className="flex-center h-full bg-linear-to-br from-[#F637CF] via-[#E3D876] to-[#4DD4C6] p-8">
-                <img src={nike1}/>
+                <img className="animate-float" src={nike1}/>
             </div>
         </div>
         <div className="flex-1 space-y-6">
