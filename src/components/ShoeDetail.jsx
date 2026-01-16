@@ -3,9 +3,9 @@ import nike1 from "../assets/n1-min.png"
 export default function ShoeDetail() {
     return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
-        <div className="flex-1">
-            <div className="bg-gradient-to-br from-[#F637CF] via-[#E3D876] to-[#4DD4C6] p-8">
-                <img className="w-full" src={nike1}/>
+        <div className="flex-1 lg:-mt-32 lg:ml-28">
+            <div className="flex-center h-full bg-linear-to-br from-[#F637CF] via-[#E3D876] to-[#4DD4C6] p-8">
+                <img src={nike1}/>
             </div>
         </div>
         <div className="flex-1 space-y-6">
@@ -17,7 +17,7 @@ export default function ShoeDetail() {
                     "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant colour gradient"        
                 }
             </div>
-            <div className="text-3xl font-extrabold md:text-6xl">
+            <div className="text-5xl font-extrabold md:text-6xl">
                 $100
             </div>
             <div className="space-x-10">
