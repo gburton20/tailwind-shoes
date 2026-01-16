@@ -4,7 +4,9 @@ export default function ShoeDetail() {
     return (
     <div className="flex flex-col space-y-4 lg:flex-row-reverse">
         <div className="flex-1">
-            <img src={nike1}/>
+            <div className="bg-gradient-to-br from-[#F637CF] via-[#E3D876] to-[#4DD4C6] p-8">
+                <img className="w-full" src={nike1}/>
+            </div>
         </div>
         <div className="flex-1 space-y-6">
             <div className="text-5xl font-black md:text-9xl">
