@@ -1,5 +1,5 @@
 import nike1 from "../assets/n1-min.png"
-import { QTY, SIZES } from "./constant";
+import { QTY, SIZES } from "../constant";
 import { Select } from "./Select";
 
 export default function ShoeDetail() {

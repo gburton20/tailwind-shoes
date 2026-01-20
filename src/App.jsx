@@ -1,7 +1,7 @@
 import Nav from "./components/Nav";
 import ShoeDetail from "./components/ShoeDetail";
 import Card from "./components/Card";
-import { SHOE_LIST } from "./components/constant";
+import { SHOE_LIST } from "./constant";
 
 export default function App() {
   return (
