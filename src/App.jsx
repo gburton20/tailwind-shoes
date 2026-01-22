@@ -5,6 +5,7 @@ import ShoeDetail from "./components/ShoeDetail";
 import SideBar from "./components/SideBar";
 import { SHOE_LIST } from "./constant";
 import { useState } from "react";
+import { BiMoon, BiSun } from "react-icons/bi"
 
 const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
   return {
@@ -15,9 +16,14 @@ const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
 })
 
 export default function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleDarkMode = () => {
+    window.document.documentElement.classList.toggle("dark")
+  }
+
   return (
-    <div className="animate-fadeIn p-10 xl:px-24">
+    <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night dark:text-white">
       <Nav onClickShoppingBtn = {() => setIsSidebarOpen(true)}/>
       <ShoeDetail/>
       <NewArrivalSection items={SHOE_LIST}/>
@@ -27,6 +33,15 @@ export default function App() {
       >
       <Cart cartItems={FAKE_CART_ITEMS}/>
       </SideBar>
+      <div className="fixed bottom-4 right-4 z-50">
+        <button 
+          onClick={toggleDarkMode}
+          className="shadow-lg bg-night-50 px-4 py-2 rounded-full text-white dark:bg-white dark:text-night hover:scale-110 transition-transform"
+        >
+          <BiSun className="hidden dark:block"/>
+          <BiMoon className="dark:hidden"/>
+        </button>
+      </div>
     </div>
   );
 }

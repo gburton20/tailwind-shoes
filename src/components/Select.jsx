@@ -7,7 +7,7 @@ export function Select({ title, options, className, defaultValue }) {
             <select 
                 defaultValue={defaultValue || ""} 
                 className={twMerge(
-                    `w-24 appearance-none border border-gray-300 bg-white p-4 ${className}`,
+                    `w-24 appearance-none border border-gray-300 bg-white p-4 dark:bg-night-50 dark:border-gray-600 dark:text-white ${className}`,
                 )}
             >
                 <option value="" disabled hidden>

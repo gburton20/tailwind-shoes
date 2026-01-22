@@ -5,7 +5,7 @@ import { SIZES, QTY } from "../constant"
 const CartItem = ({item: {product, qty, size}}) => {
   return (
     <div className={
-        "cursor-pointer bg-gray-50 p-2 hover:bg-[#DAFFA2] space-y-2"
+        "cursor-pointer bg-gray-50 p-2 hover:bg-[#DAFFA2] space-y-2 dark:bg-night-50 dark:hover:bg-gray-700"
         }
     >
         <div className="flex space-x-2">
@@ -14,7 +14,7 @@ const CartItem = ({item: {product, qty, size}}) => {
             <div className="space-y-2">
                 {/* Title and description */}
                 <div className="font-bold">{product.title}</div>
-                <div className="text-sm text-gray-400">
+                <div className="text-sm text-gray-400 dark:text-gray-500">
                     {product.description}
                 </div>
             </div>
@@ -45,7 +45,7 @@ const CartItem = ({item: {product, qty, size}}) => {
                 </div>
             </div>
                 <button>
-                    <CiTrash size={25} className="text-black"/>
+                    <CiTrash size={25} className="text-black dark:text-white"/>
                 </button>
         </div>
     </div>

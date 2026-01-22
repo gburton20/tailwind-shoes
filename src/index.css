@@ -7,6 +7,11 @@
   body {
     font-family: "Nunito Sans Variable", sans-serif;
   }
+
+  /* Force light mode by default, ignore system preferences */
+  :root {
+    color-scheme: light;
+  }
 }
 @layer utilities {
   .flex-center {
@@ -16,6 +21,10 @@
 
 /* Animations: */
 @theme {
+  --color-night: #0d1120;
+  --color-night-50: #171e2c;
+  --color-night-500: #0d1120;
+
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   @keyframes wiggle {
     0% {
