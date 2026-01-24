@@ -18,11 +18,14 @@ export default function Nav({onClickShoppingBtn}) {
 
         {/* Logo: */}
         <a href="#">
-            <NikeLogo className="h-20 w-20"/>
+            <NikeLogo className="h-20 w-20 dark:fill-white"/>
         </a>
 
         {/* Hamburger button: */}
-        <button onClick={()=> setIsMobileMenuShown(!isMobileMenuShown)} className="lg:hidden rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <button 
+            onClick={()=> setIsMobileMenuShown(!isMobileMenuShown)} 
+            className="dark:text-gray-400 lg:hidden rounded-lg p-2 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        >
             <RxHamburgerMenu size={25}/>
         </button>
 
@@ -31,7 +34,7 @@ export default function Nav({onClickShoppingBtn}) {
             !isMobileMenuShown && "hidden"
             } w-full lg:w-auto lg:block`}
         >
-            <ul className="lg:space-x-8 flex flex-col lg:flex-row rounded-lg border border-gray-100 lg:border-none bg-gray-50 lg:bg-transparent p-4 text-lg dark:bg-night-50 dark:border-gray-700">
+            <ul className="flex flex-col lg:flex-row rounded-lg border border-gray-100 lg:border-none bg-gray-50 lg:bg-transparent p-4 text-lg dark:bg-night-50 dark:border-gray-700 dark:text-white lg:dark:text-white lg:dark:bg-transparent">
                 {ROUTES.map((route, i) => {
                     return (
                         <li className={`lg:hover:text-blue-500 cursor-pointer rounded px-3 py-2 lg:hover:bg-transparent ${
