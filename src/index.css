@@ -3,6 +3,9 @@
 /* @import "tailwindcss" in modern Tailwind CSS v4+ is actually a simplified import, but you still need @tailwind utilities to explicitly control where those utility classes are injected into your final CSS. */
 @tailwind utilities;
 
+/* Disable dark mode from system preferences - only use .dark class */
+@variant dark (&:where(.dark, .dark *));
+
 @layer base {
   body {
     font-family: "Nunito Sans Variable", sans-serif;

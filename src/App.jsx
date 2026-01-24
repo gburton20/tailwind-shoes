@@ -4,7 +4,7 @@ import { NewArrivalSection } from "./components/NewArrivalSection";
 import ShoeDetail from "./components/ShoeDetail";
 import SideBar from "./components/SideBar";
 import { SHOE_LIST } from "./constant";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiMoon, BiSun } from "react-icons/bi"
 
 const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
@@ -18,9 +18,21 @@ const FAKE_CART_ITEMS = SHOE_LIST.map(shoe => {
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem("isDarkMode")
+    if(isDarkMode==="true"){
+      window.document.documentElement.classList.add("dark");
+    }
+  }, [])
+
   const toggleDarkMode = () => {
-    window.document.documentElement.classList.toggle("dark")
-  }
+    window.document.documentElement.classList.toggle("dark");
+
+    localStorage.setItem(
+      "isDarkMode", 
+      window.document.documentElement.classList.contains("dark"),
+    );
+  };
 
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night dark:text-white">
