@@ -19,7 +19,7 @@ const CartItem = ({item: {product, qty, size}}) => {
                 </div>
             </div>
             {/* Price: */}
-            <div className="font-bold">${product.price}</div>
+            <div className="font-bold dark:text-white">${product.price}</div>
         </div>
 
         <div className="flex justify-between pl-32">

@@ -20,14 +20,14 @@ export default function ShoeDetail() {
                     "The Nike Air Max 270 is a lifestyle shoe that's sure to turn heads with its vibrant colour gradient"        
                 }
             </div>
-            <div className="flex space-x-6">
+            <div className="flex space-x-3">
                 <div className="text-5xl font-extrabold md:text-6xl">
                     $100
                 </div>
                 <Select title={"QTY"} options={QTY}/>
                 <Select title={"SIZE"} options={SIZES}/>
             </div>
-            <div className="space-x-10">
+            <div className="space-x-6 sm:justify-between">
                 <button className="h-14 w-44 bg-black text-white hover:bg-gray-900 active:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-200">
                     Add to bag
                 </button>
